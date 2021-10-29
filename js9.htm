@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #quiz{
+            display: flex;
+            flex-direction: column;
+        }
+        button{
+            margin: 10px;
+            border-radius: 5px 10px;
+            padding: 5px 10px;
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz">
+        <div>
+            <h4>Azerbaycanin paytaxti</h4>
+            <input name="s1" id="11" type="radio" /> Baki
+            <input name="s1" id="12" type="radio" /> Istanbul
+            <input name="s1" id="13" type="radio" /> London
+        </div>
+        <div>
+            <h4>Italiyanin paytaxti</h4>
+            <input name="s2" id="21" type="radio" /> Madrid
+            <input name="s2" id="22" type="radio" /> Roma
+            <input name="s2" id="23" type="radio" /> Paris
+        </div>
+        <div>
+            <h4>Yaponiyanin paytaxti</h4>
+            <input name="s3" id="31" type="radio" /> Seul
+            <input name="s3" id="32" type="radio" /> Tokio
+            <input name="s3" id="33" type="radio" /> Pekin
+        </div>
+    </div>
+    <button onclick="show()">OK</button>
+    <p id="result"></p>
+
+
+        <script>
+            function show(){
+                let ball=0;
+                if (document.getElementById('11').checked) ball+= 2;
+                if (document.getElementById('22').checked) ball+= 2;
+                if (document.getElementById('32').checked) ball+= 2;
+                result.innerHTML = "Baliniz"  +  ball;
+                result.innerHTML += " <br /> Duz :"  +  ball / 2 + "Sehv :" +(3-ball/2);
+            }
+        </script>
+</body>
+</html>

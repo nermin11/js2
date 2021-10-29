@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let x=prompt("Alış məbləğini daxil edin")
+       /* alert(   
+                x <= 200 ? "Endirim yoxdur" :
+                x <= 300 ? "3%" :
+				x <= 500 ? "5%" : "7%");
+        */
+        alert(   
+                x <= 200 ? "Endirim yoxdur" :
+                x <= 300 ? ( (x*3 / 100) + "manat endirim qazandiniz" ) :
+				x <= 500 ? ( (x*5 / 100) + "manat endirim qazandiniz" ) : (x*7 / 100) + "manat endirim qazandiniz" );
+    </script>
+</body>
+</html>

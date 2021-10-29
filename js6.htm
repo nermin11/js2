@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="info" />
+    <select id="change">
+        <option value="1.7">AZN</option>
+        <option value="8.39">TRY</option>
+        <option value="0.83">EUR</option>
+    </select>
+    <button onclick="curr()">click</button>
+    <p id="result"></p>
+
+
+    <script>
+        const info= document.getElementById('info');
+        const change= document.getElementById('change');
+        const result= document.getElementById('result');
+
+        function curr(){
+            result.innerHTML= Math.trunc (100* info.value * change.value) /100;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="gun" min="1" max="31"/>
+    <input type="number" id="ay" min="1" max="12"/>
+    <input type="number" id="il" min="1970" max="2222"/>
+    <button onclick="nextDay()">Click</button>
+    <p id="result"></p>
+
+
+    <script>
+        const gun=document.getElementById('gun');
+        const ay=document.getElementById('ay');
+        const il=document.getElementById('il');
+        const result=document.getElementById('result');
+        function nextDay(){
+            let bgun = + gun.value ,
+                bay = + ay.value, 
+                bil = + il.value;
+            let sgun = bgun, 
+                say = bay, 
+                sil =bil;
+
+           if (bgun == 28 && bay == 2 && !uzunILYoxla(bil)  ||
+                bgun == 29 && bay == 2 && uzunILYoxla(bil) ) {
+               sgun = 1;
+               say = 3;
+           } else if( bgun == 30 && (bay==4 || bay==6 || bay==9 || bay==11)  ||
+                       bgun == 31 ) {
+                       sgun = 1;
+                       say= bay + 1;
+                       } else{
+                           sgun= bgun + 1;
+                       }
+        
+        if (say > 12 ) {
+            say = 1 ;
+            sil = bil + 1 ;
+        }
+    
+         result.innerHTML = "Sonraki gun :" + sgun + "." + say + "." + sil; 
+    } 
+        function uzunILYoxla(il){
+            return( il % 400 == 0 || il % 4 == 0 || il % 100 == 1);
+        }
+    </script>
+
+</body>
+</html>
